@@ -308,7 +308,7 @@ ul.menu-items li a:hover {
 }
 .desc {
     flex-wrap: wrap;
-    max-width: 600px;
+    max-width: 50%;
 }
 .button {
     display: flex; /* Mengatur tata letak menjadi flexbox */
