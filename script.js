@@ -1,42 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Mengambil semua anchor link di navbar
-//     const navLinks = document.querySelectorAll('.menu-items a');
-    
-//     // Menambahkan event listener untuk setiap anchor link
-//     navLinks.forEach(function(navLink) {
-//       navLink.addEventListener('click', function(event) {
-//         event.preventDefault(); // Menghentikan default behavior dari anchor link
-        
-//         // Mengambil id target dari href anchor link
-//         const targetId = this.getAttribute('href').substring(1);
-        
-//         // Mengambil elemen dengan id target
-//         const targetElement = document.getElementById(targetId);
-        
-//         // Scroll ke elemen target dengan smooth behavior
-//         targetElement.scrollIntoView({ behavior: 'smooth' });
-//       });
-//     });
-//   });
-//   document.addEventListener("DOMContentLoaded", function() {
-//     // Mengambil semua anchor link di navbar
-//     const navLinks = document.querySelectorAll('.nav-link');
-  
-//     // Menambahkan event listener untuk setiap anchor link
-//     navLinks.forEach(function(navLink) {
-//       navLink.addEventListener('click', function(event) {
-//         event.preventDefault(); // Menghentikan default behavior dari anchor link
-        
-//         // Menghapus kelas "active" dari semua anchor link
-//         navLinks.forEach(function(link) {
-//           link.classList.remove('active');
-//         });
-        
-//         // Menambahkan kelas "active" pada anchor link yang sedang diklik
-//         this.classList.add('active');
-//       });
-//     });
-//   });
+
 document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -60,3 +22,40 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+function startTypingAnimation() {
+  var texts = ["UI/UX Design", "Web Development"]; // Teks yang akan diketik
+  var currentIndex = 0;
+  var currentText = texts[currentIndex];
+  var i = 0;
+  var element = document.getElementById("typing-element");
+  var cursor = document.getElementById("cursor");
+  var typingSpeed = 100; // Kecepatan mengetik dalam milidetik
+  var delayBetweenTexts = 2000; // Waktu tunggu sebelum mengetik teks berikutnya dalam milidetik
+
+  // Menghapus teks awal
+  element.innerHTML = "";
+
+  function type() {
+      if (i < currentText.length) {
+          element.innerHTML += currentText.charAt(i);
+          i++;
+          cursor.style.left = i * 20 + "px"; // Mengatur posisi kursor
+          setTimeout(type, typingSpeed); // Waktu tunggu antara setiap karakter
+      } else {
+          // Jika semua karakter telah diketik, tunggu beberapa saat kemudian lanjutkan ke teks berikutnya
+          setTimeout(function() {
+              element.innerHTML = ""; // Kosongkan elemen teks
+              i = 0;
+              currentIndex = (currentIndex + 1) % texts.length; // Pindah ke teks berikutnya
+              currentText = texts[currentIndex];
+              type(); // Mulai mengetik teks baru
+          }, delayBetweenTexts);
+      }
+  }
+
+  // Panggil fungsi untuk memulai animasi mengetik
+  type();
+}
+
+// Panggil fungsi untuk memulai animasi mengetik saat halaman dimuat
+startTypingAnimation();

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script src="script.js"></script>
+    
 </head>
 <body>
     <div class="custom-shape-divider-top-1711897187">
@@ -44,16 +44,14 @@
             <p><strong>Khasnah Maesaroh</strong></p>
             <span>Undergraduate Information Systems Student in UBSI</span>
         </div>
-        <img src="bg.png" alt="foto" style="border: 1px solid #30cfd0; border-radius: 15px;">
+        <div class="profile-picture-container">
+            <img src="bg.png" alt="foto" class="profile-picture">
+            <div class="profile-icon"></div>
+          </div>          
         <div class="intro2">
-            <div class="skill">
-                <span class="text">&nbsp;ui/ux design &nbsp;</span>
-                <span class="hover-text">&nbsp;ui/ux design&nbsp;</span>
-            </div>
-            <div class="skill">
-                <span class="text">&nbsp;web development &nbsp;</span>
-                <span class="hover-text">&nbsp;web development &nbsp;</span>
-            </div>
+            <div class="typing-animation" id="typing-element"></div>
+            <span class="cursor" id="cursor"></span>
+                <!-- <div class="typing-animation" id="typing-element"></div> -->
         </div>
     </div>
         <h5 id="aboutme">About Me</h5>
@@ -148,6 +146,7 @@
             <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
         </svg>
     </div>
+    <script src="script.js"></script>
         <script>
             document.getElementById('menu-toggle').addEventListener('click', function() {
                 var menuItems = document.querySelector('.menu-items');

@@ -33,8 +33,9 @@ nav {
     font-size: 24px;
     text-decoration: none;
     padding-left: 16px;
+    font-weight: bold;
+    font-family: "Caveat", cursive;
 }
-
 ul.menu-items {
     list-style-type: none;
     margin: 0;
@@ -143,6 +144,36 @@ ul.menu-items li a:hover {
     flex-wrap: wrap; 
     margin-inline: 64px;
 }
+.profile-picture-container {
+    position: relative;
+    width: 200px; /* Sesuaikan dengan ukuran foto */
+    height: 200px; /* Sesuaikan dengan ukuran foto */
+    margin-bottom: 48px;
+  }
+  
+  .profile-picture {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* border-radius: 50%; */
+     /* Membuat foto menjadi lingkaran */
+    position: relative;
+    z-index: 2; /* Atur foto di lapisan paling atas */
+  }
+  
+  .profile-icon {
+    position: absolute;
+    bottom: -1px; /* Sesuaikan posisi ikon */
+    left: 50%; /* Sesuaikan posisi ikon */
+    transform: translateX(-50%); /* Agar ikon berada di tengah horizontal */
+    width: 200px; /* Sesuaikan ukuran ikon */
+    height: 200px; /* Sesuaikan ukuran ikon */
+    background-color: #30d0d03d; /* Warna latar belakang ikon */
+    border-radius: 50%; /* Membuat ikon menjadi lingkaran */
+    z-index: 1; /* Atur ikon di lapisan di bawah foto */
+  }
+  
+  
 .intro1 p {
     font-size: 48px; 
     background: linear-gradient(to right, #30cfd0 50%, #330867 100%);
@@ -159,34 +190,42 @@ ul.menu-items li a:hover {
     max-width: 500px;
 }
 .intro2 {
-    flex-wrap: wrap;
-    max-width: 500px;
+    width: 350px;
+    position: relative;    
 }
-.skill {
-    position: relative;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 48px;
-    cursor: pointer;
-}
-/* .text {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
-} */
-.hover-text {
-    position: absolute;
-    inset: 0;
-    width: 0%;
-    color: #30cfd0;
-    overflow: hidden;
-    border-right: 6px solid var(--clr);
-    transition: 0.5s ease-in-out;
-}
-.skill:hover .hover-text {
+.typing-animation {
     width: 100%;
-    filter: drop-shadow( 16px 8px 16px #30cfd0);
-    /* filter: drop-shadow(0 0 40px var(--clr)); */
+    display: block;
+    z-index: 2; /* Atur foto di lapisan paling atas */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    font-size: 30px; /* Ukuran font teks */
+    position: relative; /* Menentukan posisi relatif untuk mengatur kursor */
+    color: #30CFD0;
 }
+
+.cursor {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #30CFD0; /* Warna kursor */
+    animation: blink-caret 0.75s step-end infinite; /* Animasi berkedip */
+    bottom: 0; /* Menempatkan kursor di bagian bawah teks */
+    position: absolute;
+    bottom: 5px; /* Sesuaikan posisi ikon */
+    transform: translateX(-50%); /* Agar ikon berada di tengah horizontal */
+    width: 0.15em; /* Sesuaikan ukuran ikon */
+    height: 2.5em; /* Sesuaikan ukuran ikon */
+    z-index: 1; /* Atur ikon di lapisan di bawah foto */
+    
+}
+
+@keyframes blink-caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
 .aboutme{
     margin-inline: 64px;
 }
